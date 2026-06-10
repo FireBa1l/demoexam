@@ -74,8 +74,8 @@ namespace Umey																																				|
     }																																						|
 }																																							|
 ------------------------------------------------------------------------------------------------------------------------------------------------------------|
-<Window x:Class="Umey.TableWinowAdm"																														 Таблица						
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"																					|Разметка
+<Window x:Class="Umey.TableWinowAdm"																														    Таблица						
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"																					|   Разметка
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"					
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"																						|
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"																
@@ -83,7 +83,7 @@ namespace Umey																																				|
         mc:Ignorable="d"																					
         Title="TableWinowAdm" Height="450" Width="800">																										|
     <Grid>																							
-        <Grid.RowDefinitions>																																|//<Grid.RowDefinitions> сразу внутри Grid
+        <Grid.RowDefinitions>																																|   //<Grid.RowDefinitions> сразу внутри Grid
             <RowDefinition Height="20"/>																				
             <RowDefinition Height="*"/>																														|
         </Grid.RowDefinitions>																					
@@ -93,7 +93,7 @@ namespace Umey																																				|
             <ColumnDefinition Width="70"/>																				
         </Grid.ColumnDefinitions>																															|	
         <Border Grid.Column="1" Grid.Row="1" BorderBrush="MediumPurple" BorderThickness="1">															
-            <DataGrid AutoGenerateColumns="True" Name="dg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ColumnWidth="*"/>						 //Name="dg" ColumnWidth="*" HorizontalAlignment="Stretch"		
+            <DataGrid AutoGenerateColumns="True" Name="dg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ColumnWidth="*"/>						  //Name="dg" ColumnWidth="*" HorizontalAlignment="Stretch"		
         </Border>																					
         <Button Background="MediumPurple" Click="Save_click" Grid.Column="2" Width="60" Content="Cохранить" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,0" Grid.Row="1"/>	//Click="Save_click" 	
         <Button Background="MediumPurple" Click="AddButton_click" Grid.Column="2" Width="60" Content="Добавить" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1"/>					//Click="AddButton_click" 
@@ -102,10 +102,10 @@ namespace Umey																																				|
     </Grid>																																					|
 </Window>																																						
 -	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	|
-using System;																															Логика																																							
+using System;																																					Логика																																							
 using System.Data;																			
-using System.Data.SqlClient;																											//обязательно:	using System.Data;								
-using System.Windows;																													//using System.Data.SqlClient;
+using System.Data.SqlClient;																																//обязательно:	using System.Data;								
+using System.Windows;																																		//using System.Data.SqlClient;
 using System.Windows.Controls;																
 namespace Umey									
 {														
@@ -116,8 +116,8 @@ namespace Umey
         public TableWinowAdm()														
         {																
             InitializeComponent();										
-            string con = "Data Source=DESKTOP-6R8LE85;Initial Catalog=tachki;Integrated Security=True";					 				//где DESKTOP-6R8LE85 - имя сервера, tachki - название БД										
-            string query = "SELECT * FROM Cars";																						//Cars - таблица для вывода								
+            string con = "Data Source=DESKTOP-6R8LE85;Initial Catalog=tachki;Integrated Security=True";					 									//где DESKTOP-6R8LE85 - имя сервера, tachki - название БД										
+            string query = "SELECT * FROM Cars";																											//Cars - таблица для вывода								
             adapter = new SqlDataAdapter(query, con);										
             table = new DataTable();								
             SqlCommandBuilder b = new SqlCommandBuilder(adapter);										
